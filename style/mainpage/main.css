@@ -262,6 +262,10 @@ table {
   height: 35px;
   animation: spin 2s linear infinite;
 }
+.content__title {
+  font-size: 1.1rem;
+  font-weight: bolder;
+}
 
 .loading {
   border: 10px solid #f3f3f3;
@@ -321,17 +325,16 @@ a {
 }
 .single__article img {
   width: 100%;
-  margin: 2%;
+  margin: 2% 0;
 }
 .single__article small {
   margin: 1%;
   font-weight: bolder;
-  font-size: larger;
+  font-size: 1.1rem;
 }
 .single__article p {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   font-size: large;
   padding: 3px 0;
 }

@@ -7,17 +7,17 @@
     }
     & img {
       width: 100%;
-      margin: 2%;
+      margin: 2% 0;
     }
     & small {
       margin: 1%;
       font-weight: bolder;
-      font-size: larger;
+      font-size: 1.1rem;
     }
     & p {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+     
       font-size: large;
       padding: 3px 0;
     }

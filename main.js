@@ -55,7 +55,7 @@ const renderNews = (data) => {
             <article class="content__article"  id="article-${news.id}">
                     <img src="${
                       news.yoast_head_json.og_image[0].url
-                    }" alt="" class="content__img" style="width: 500px; max-width: 100%; height: 300px; object-fit: cover;></img>
+                    }" alt="" class="content__img" style="width: 500px; max-width: 100%; height: 300px; object-fit: cover;"/>
                     <p class="content__title">${news.title.rendered}</p>
                     <p class="content__content">${news.excerpt.rendered}</p>
                     <h6 class="content__publisheddate">${news.yoast_head_json.article_published_time.substring(
@@ -110,7 +110,7 @@ const fetchNews = async (country_id = c || "albId", per_page = 10, page = 1) => 
 };
 
 let i=1;
-loadBtn.addEventListener("click", function(){
+loadBtn.addEventListener("click", () => {
   i++;
   fetchNews(currentCategory,10,i);
 });

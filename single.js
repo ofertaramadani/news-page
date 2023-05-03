@@ -11,10 +11,10 @@ const gobackbtn = document.querySelector(".single__btn");
 const renderSingleNews = (data) => {
   let html = `
         <article class="single__article"  id="article-${data.id}">
+                    <h2 class="single__title">${data.title.rendered}</h2>
                     <img src="${
                       data.yoast_head_json.og_image[0].url
                     }" alt="" class="single__img">
-                    <h4 class="single__title">${data.title.rendered}</h4>
                     <p class="single__content">${data.content.rendered}</p>
                     <h6 class="single__publisheddate">${data.yoast_head_json.article_published_time.substring(
                       0,

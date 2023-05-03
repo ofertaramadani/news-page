@@ -8,7 +8,7 @@ const singleArticles = document.querySelector(".single__articles");
 const loader = document.querySelector(".loader");
 const gobackbtn = document.querySelector(".single__btn");
 
-const renderSingleNews = function (data) {
+const renderSingleNews = (data) => {
   let html = `
         <article class="single__article"  id="article-${data.id}">
                     <img src="${
@@ -25,16 +25,16 @@ const renderSingleNews = function (data) {
   singleArticles.insertAdjacentHTML("afterbegin", html);
 };
 
-const showLoader = function () {
+const showLoader = () => {
   gobackbtn.style.display = "none";
   singleArticles.innerHTML = "";
   singleArticles.classList.add("loading");
 };
-const hideLoader = function () {
+const hideLoader = () => {
   singleArticles.classList.remove("loading");
   gobackbtn.style.display = "block";
 };
-const fetchSingleNews = async function (articleId) {
+const fetchSingleNews = async (articleId) => {
   try {
     showLoader();
     let data = await fetch(`${API_BASE_URL}/${articleId}?_embed=1`);
@@ -49,6 +49,6 @@ const fetchSingleNews = async function (articleId) {
 
 fetchSingleNews(articleId);
 
-gobackbtn.addEventListener("click", function () {
+gobackbtn.addEventListener("click", () => {
   window.location.href = `/index.html?category=${c}`;
 });

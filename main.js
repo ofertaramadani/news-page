@@ -48,7 +48,7 @@ if (c) {
   currentActive.classList.add("active");
 }
 
-const renderNews = function (data) {
+const renderNews = (data) => {
   data.forEach((news) => {
     let html = `
         <a href="single.html?id=${news.id}&countryId=${currentCategory}">
@@ -69,7 +69,7 @@ const renderNews = function (data) {
   });
 };
 
-const showLoader = function (loaderName) {
+const showLoader = (loaderName) => {
   if (loaderName == "loader1") {
     loadBtn.style.display = "none";
     contentArticles.innerHTML = "";
@@ -80,7 +80,7 @@ const showLoader = function (loaderName) {
   }
 };
 
-const hideLoader = function (loaderName) {
+const hideLoader = (loaderName) => {
   if (loaderName == "loader1") {
     contentArticles.classList.remove("loading");
     loadBtn.style.display = "block";
@@ -90,8 +90,7 @@ const hideLoader = function (loaderName) {
   }
 };
 
-
-const fetchNews = async function (country_id = c || "albId", per_page = 10, page = 1) {
+const fetchNews = async (country_id = c || "albId", per_page = 10, page = 1) => {
   try {
     rememberCountry(country_id);
     currentCategory = country_id;

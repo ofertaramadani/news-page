@@ -1,5 +1,8 @@
 .main-header {
   padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #d9d9d9;
+  background: linear-gradient(to bottom, #f7f7f7, #ffffff);
   &__list {
     display: flex;
     flex-direction: row;

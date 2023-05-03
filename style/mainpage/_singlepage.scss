@@ -17,8 +17,7 @@
     & p {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
       font-size: large;
       padding: 3px 0;
     }

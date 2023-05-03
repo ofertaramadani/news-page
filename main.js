@@ -90,41 +90,30 @@ const hideLoader = function (loaderName) {
   }
 };
 
-const fetchNews = async function (country_id = c || albId) {
+
+const fetchNews = async function (country_id = c || "albId", per_page = 10, page = 1) {
   try {
     rememberCountry(country_id);
     currentCategory = country_id;
-    showLoader("loader1");
+    const loader = page === 1 ? "loader1" : "loader2";
+    showLoader(loader);
 
     let data = await fetch(
-      `${API_BASE_URL}?per_page=10&categories=${country_id}`
+      `${API_BASE_URL}?per_page=${per_page}&page=${page}&categories=${country_id}`
     );
     data = await data.json();
 
     renderNews(data);
-    hideLoader("loader1");
+    hideLoader(loader);
   } catch (err) {
     console.error("Something went wrong", err);
   }
 };
 
-const fetchMoreNews = async function () {
-  try {
-    currentPage++;
-    showLoader("loader2");
-
-    let data = await fetch(
-      `${API_BASE_URL}?per_page=10&page=${currentPage}&categories=${currentCategory}`
-    );
-    data = await data.json();
-    renderNews(data);
-
-    hideLoader("loader2");
-  } catch (err) {
-    console.log("Something went wrong", err);
-  }
-};
-
-loadBtn.addEventListener("click", fetchMoreNews);
+let i=1;
+loadBtn.addEventListener("click", function(){
+  i++;
+  fetchNews(currentCategory,10,i);
+});
 
 fetchNews();

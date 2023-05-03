@@ -9,9 +9,13 @@
       color: $accent1;
     }
   }
-  &__categories:hover {
-    cursor: pointer;
-    color: $accent1;
+  
+  &__categories{
+    font-size: 1.15rem;
+    &:hover {
+      cursor: pointer;
+      color: $accent1;
+    }
   }
 }
 

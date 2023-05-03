@@ -148,6 +148,9 @@ table {
 .main-header__list .active {
   color: #3498db;
 }
+.main-header__categories {
+  font-size: 1.15rem;
+}
 .main-header__categories:hover {
   cursor: pointer;
   color: #3498db;

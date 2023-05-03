@@ -1,0 +1,21 @@
+@import './variables';
+@import './mixin';
+@import './reset';
+@import './header';
+@import './mainContent';
+@import './singlepage';
+
+
+.container {
+    max-width: 1728px;
+    width: 100%;
+    margin: 0 auto;
+}
+body {
+    font-family: 'Montserrat','sans-serif';
+}
+img {
+    max-width: 100%;
+	  height: auto;
+    object-fit: cover;
+}

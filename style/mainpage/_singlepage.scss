@@ -1,0 +1,31 @@
+.single {
+  &__article {
+    @include flexbox();
+    margin:0 10%;
+    & figure {
+      width:100% !important;
+    }
+    & img {
+      width:100%;
+      margin: 2%;
+    }
+    & small {
+      margin: 1%;
+      font-weight: bolder;
+      font-size: larger;
+    }
+    & p {
+      font-size: larger;
+      padding: 3px;
+    }
+  }
+  &__btn__wrapper{
+    margin-top: 20px;
+    @include flexbox();
+}
+&__btn{
+  @include btnStyle();
+}
+}
+
+  

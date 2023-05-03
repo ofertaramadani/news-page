@@ -55,8 +55,8 @@ const renderNews = function (data) {
             <article class="content__article"  id="article-${news.id}">
                     <img src="${
                       news.yoast_head_json.og_image[0].url
-                    }" alt="" class="content__img" style="width: 500px; max-width: 100%; height: 300px; object-fit: cover;>
-                    <h4 class="content__title">${news.title.rendered}</h4>
+                    }" alt="" class="content__img" style="width: 500px; max-width: 100%; height: 300px; object-fit: cover;></img>
+                    <p class="content__title">${news.title.rendered}</p>
                     <p class="content__content">${news.excerpt.rendered}</p>
                     <h6 class="content__publisheddate">${news.yoast_head_json.article_published_time.substring(
                       0,

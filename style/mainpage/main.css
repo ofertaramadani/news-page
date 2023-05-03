@@ -315,8 +315,12 @@ a {
   font-size: larger;
 }
 .single__article p {
-  font-size: larger;
-  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  padding: 3px 0;
 }
 .single__btn-wrapper {
   margin-top: 20px;
@@ -343,6 +347,10 @@ a {
   background-color: #3498db;
   border-radius: 5px;
   margin-bottom: 15px;
+}
+.single__title {
+  font-weight: bolder;
+  font-size: larger;
 }
 
 .container {

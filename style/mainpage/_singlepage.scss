@@ -15,8 +15,12 @@
       font-size: larger;
     }
     & p {
-      font-size: larger;
-      padding: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: large;
+      padding: 3px 0;
     }
   }
   &__btn-wrapper {
@@ -25,5 +29,9 @@
   }
   &__btn {
     @include btnStyle();
+  }
+  &__title {
+    font-weight: bolder;
+    font-size: larger;
   }
 }

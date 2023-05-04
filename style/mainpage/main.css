@@ -148,9 +148,6 @@ table {
   justify-content: center;
   gap: 20px;
 }
-.main-header__list .active {
-  color: #3498db;
-}
 .main-header__categories {
   font-size: 1.15rem;
 }
@@ -161,6 +158,10 @@ table {
 
 .single__header {
   margin-bottom: 5%;
+}
+
+.active {
+  color: #3498db;
 }
 
 .content {

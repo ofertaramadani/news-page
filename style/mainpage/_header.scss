@@ -8,9 +8,6 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    .active {
-      color: $accent1;
-    }
   }
   
   &__categories{
@@ -25,3 +22,8 @@
 .single__header {
   margin-bottom: 5%;
 }
+
+.active {
+  color: $accent1;
+}
+

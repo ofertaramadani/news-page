@@ -19,6 +19,7 @@ let currentPage = 1;
 
 const lists = document.querySelectorAll("li");
 let currentActive = document.querySelector(".active");
+console.log(currentActive);
 
 const rememberCountry = (country_id) => {
   const url = new URL(window.location.href);
@@ -90,7 +91,7 @@ const hideLoader = (loaderName) => {
   }
 };
 
-const fetchNews = async (country_id = c || "albId", per_page = 10, page = 1) => {
+const fetchNews = async (country_id = c || albId, per_page = 10, page = 1) => {
   try {
     rememberCountry(country_id);
     currentCategory = country_id;

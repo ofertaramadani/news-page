@@ -13,30 +13,24 @@
     />
     <title>News page</title>
   </head>
-  <body>
+  <body class="container">
     <header class="main-header">
-      <div class="container">
-        <nav class="main-header__nav">
-          <ul class="main-header__list">
-            <li class="main-header__categories albania active" value="206">
-              Albania
-            </li>
-            <li class="main-header__categories bulgaria" value="211">
-              Bulgaria
-            </li>
-            <li class="main-header__categories croatia" value="191">Croatia</li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="main-header__nav">
+        <ul class="main-header__list">
+          <li class="main-header__categories albania active" value="206">
+            Albania
+          </li>
+          <li class="main-header__categories bulgaria" value="211">Bulgaria</li>
+          <li class="main-header__categories croatia" value="191">Croatia</li>
+        </ul>
+      </nav>
     </header>
     <main class="content">
-      <div class="container">
-        <section class="content__articles"></section>
-        <div class="content__loader"></div>
-        <div class="content__loader2" style="display: none"></div>
-        <div class="content__btn-wrapper">
-          <button class="content__btn">Load more</button>
-        </div>
+      <section class="content__articles"></section>
+      <div class="content__loader"></div>
+      <div class="content__loader2" style="display: none"></div>
+      <div class="content__btn-wrapper">
+        <button class="content__btn">Load more</button>
       </div>
     </main>
     <script src="main.js"></script>

@@ -19,7 +19,7 @@ let currentPage = 1;
 
 const lists = document.querySelectorAll("li");
 let currentActive = document.querySelector(".active");
-console.log(currentActive);
+
 
 const rememberCountry = (country_id) => {
   const url = new URL(window.location.href);
@@ -52,7 +52,7 @@ if (c) {
 const renderNews = (data) => {
   data.forEach((news) => {
     let html = `
-        <a href="single.html?id=${news.id}&countryId=${currentCategory}">
+        <a href="single.html?id=${news.id}&countryId=${currentCategory}" class="content__link">
             <article class="content__article"  id="article-${news.id}">
                     <img src="${
                       news.yoast_head_json.og_image[0].url

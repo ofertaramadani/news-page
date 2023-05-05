@@ -14,7 +14,7 @@ const renderSingleNews = (data) => {
                     <h2 class="single__title">${data.title.rendered}</h2>
                     <img src="${
                       data.yoast_head_json.og_image[0].url
-                    }" alt="" class="single__img">
+                    }" alt="No image found" class="single__img">
                     <p class="single__content">${data.content.rendered}</p>
                     <h6 class="single__publisheddate">${data.yoast_head_json.article_published_time.substring(
                       0,
@@ -42,7 +42,7 @@ const fetchSingleNews = async (articleId) => {
     renderSingleNews(data);
     hideLoader();
   } catch (err) {
-    console.log("Something went wrong", err);
+    console.error("Something went wrong", err);
     alert("Something went wrong");
   }
 };

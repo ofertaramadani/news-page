@@ -4,7 +4,7 @@ const API_BASE_URL = "https://balkaninsight.com/wp-json/wp/v2/posts";
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const c = urlParams.get("category");
+const categoryFromSp = urlParams.get("category");
 
 const contentArticles = document.querySelector(".content__articles");
 const loadBtn = document.querySelector(".content__btn-wrapper");
@@ -37,9 +37,9 @@ lists.forEach((list) => {
   });
 });
 
-if (c) {
+if (categoryFromSp) {
   const currentList = document.querySelector(
-    `.main-header__categories[value="${c}"]`
+    `.main-header__categories[value="${categoryFromSp}"]`
   );
   if (currentActive) {
     currentActive.classList.remove("active");
@@ -92,7 +92,7 @@ const hideLoader = (loaderName) => {
   }
 };
 
-const fetchNews = async (country_id = c || albId, per_page = 10, page = 1) => {
+const fetchNews = async (country_id = categoryFromSp || albId, per_page = 10, page = 1) => {
   try {
     rememberCountry(country_id);
     currentCategory = country_id;
@@ -111,10 +111,10 @@ const fetchNews = async (country_id = c || albId, per_page = 10, page = 1) => {
   }
 };
 
-let i = 1;
+let pageNext = 1;
 loadBtn.addEventListener("click", () => {
-  i++;
-  fetchNews(currentCategory, 10, i);
+  pageNext++;
+  fetchNews(currentCategory, 10, pageNext);
 });
 
 fetchNews();

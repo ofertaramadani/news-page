@@ -313,6 +313,10 @@ table {
     transform: rotate(360deg);
   }
 }
+.content__loader2--1 {
+  display: none;
+}
+
 .single__article {
   display: flex;
   flex-direction: column;
@@ -395,7 +399,7 @@ table {
 
 body {
   font-family: "Montserrat", "sans-serif";
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 img {

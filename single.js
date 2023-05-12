@@ -2,7 +2,7 @@ const API_BASE_URL = "https://balkaninsight.com/wp-json/wp/v2/posts";
 
 const queryParams = new URLSearchParams(window.location.search);
 const articleId = queryParams.get("id");
-const c = queryParams.get("countryId");
+const countryId = queryParams.get("countryId");
 
 const singleArticles = document.querySelector(".single__articles");
 const loader = document.querySelector(".loader");
@@ -25,30 +25,31 @@ const renderSingleNews = (data) => {
   singleArticles.insertAdjacentHTML("afterbegin", html);
 };
 
-const showLoader = () => {
-  gobackbtn.style.display = "none";
-  singleArticles.innerHTML = "";
-  singleArticles.classList.add("loading");
+const toggleLoader = (show) => {
+  if (show) {
+    gobackbtn.style.display = "none";
+    singleArticles.innerHTML = "";
+    singleArticles.classList.add("loading");
+  } else {
+    singleArticles.classList.remove("loading");
+    gobackbtn.style.display = "block";
+  }
 };
-const hideLoader = () => {
-  singleArticles.classList.remove("loading");
-  gobackbtn.style.display = "block";
-};
+
 const fetchSingleNews = async (articleId) => {
   try {
-    showLoader();
+    toggleLoader(true);
     let data = await fetch(`${API_BASE_URL}/${articleId}?_embed=1`);
     data = await data.json();
     renderSingleNews(data);
-    hideLoader();
+    toggleLoader(false);
   } catch (err) {
     console.error("Something went wrong", err);
     alert("Something went wrong");
   }
 };
-
 fetchSingleNews(articleId);
 
 gobackbtn.addEventListener("click", () => {
-  window.location.href = `/index.html?category=${c}`;
+  window.location.href = `/index.html?category=${countryId}`;
 });
